@@ -1,0 +1,157 @@
+/*
+Assignment 2
+Name: Juan Jacobo Florez Monroy
+Student Number: 8857381
+*/
+
+/* Your layout should work in the latest version of Chrome OR Firefox for Mac OR PC.
+I used the website https://caniuse.com/ to test two properties of grid.
+
+1. First test: 
+Property: grid-auto-rows
+URL: https://caniuse.com/?search=grid-auto-rows
+Comment: The website shows that for Chrome 115 and Firefox 16.5 the property is marked as "Supported".
+
+2. Second test:
+Property: grid-column
+URL: https://caniuse.com/?search=grid-column
+Comment: The website shows that for Chrome 115 and Firefox 16.5 the property is marked as "Supported".
+*/
+
+header {
+	/*
+	Here I'm changing the way I style the header, for the whole website I use flex but here I'm using grid because of the assignment
+	and if you go to the style.css file, line 41, selector "nav ul", you will see that the nav is being styled with flex, 
+	so here I'm doing the part of the assignment that says "Add flex box code to content in at least one grid element".
+	*/
+	display: grid;
+	grid-template-columns: 1fr auto;
+	grid-template-rows: auto;
+}
+main {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: auto auto;
+	grid-auto-rows: auto;
+}
+#div_video {
+	grid-column: 1 / span 2;
+}
+video {
+	width: 100%;
+	margin-bottom: 150px;
+}
+.grid_container {
+	/*Reviewed the style of how to create a grid with template areas on https://www.w3schools.com/css/css_grid.asp*/
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-areas:
+		"photo1 photo2"
+		"description description";
+	text-align: center;
+}
+.grid_item1 {
+	grid-area: photo1;
+}
+.grid_item2 {
+	grid-area: photo2;
+}
+.grid_item3 {
+	grid-area: description;
+	padding: 0px 150px;
+	margin-bottom: 150px;
+}
+img {
+	width: 83%;
+}
+/*Aside*/
+aside {
+	border-left: 1px solid rgb(211, 211, 211);
+	padding: 5px 15px;
+	height: 650px;
+	font-size: 95%;
+	text-align: justify;
+}
+aside p {
+	font-weight: bold;
+	margin-left: 23px;
+	letter-spacing: 1.8px;
+	font-style: italic;
+}
+aside li {
+	text-align: justify;
+	line-height: 25px;
+	margin-bottom: 15px;
+}
+
+/* Tablet layout */
+@media screen and (max-width: 1050px) {
+	.grid_item3 {
+		padding: 0px 70px;
+		font-size: 95%;
+		margin-bottom: 100px;
+	}
+	.grid_item3 p {
+		line-height: 25px;
+	}
+	aside {
+		height: 900px;
+	}
+	aside li {
+		text-align: left;
+	}
+	img {
+		height: 300px;
+		width: 90%;
+	}
+}
+
+/* Mobile layout */
+@media screen and (max-width: 840px) {
+	main {
+		grid-template-columns: 1fr;
+		gap: 80px;
+	}
+	#div_video {
+		grid-column: auto;
+	}
+	#div_video video {
+		margin-bottom: 0px;
+	}
+	#div_cities {
+		/*
+		Here I'm using grid reordering with media queries.
+		On mobile layout, div_video will be displayed first, then the "aside" and lastly div_cities.
+		The default value for order is 0, that's why I only use the order property in div_cities to make if go to the end.
+		*/
+		order: 1;
+	}
+	.grid_container {
+		grid-template-columns: 75%;
+		grid-template-areas:
+			"photo1"
+			"photo2"
+			"description";
+		justify-content: center;
+		gap: 10px;
+	}
+	img {
+		height: 380px;
+		width: 100%;
+	}
+	aside {
+		border: none;
+		height: auto;
+	}
+	aside p,
+	aside li {
+		text-align: center;
+	}
+	aside p {
+		font-size: 120%;
+		margin-bottom: 30px;
+	}
+	aside li {
+		list-style-type: none;
+	}
+}
