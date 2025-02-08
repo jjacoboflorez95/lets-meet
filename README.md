@@ -58,6 +58,12 @@ This project was created as part of a **college assignment**, allowing me to pra
 - **Responsive web development**.
 - **HTML structure and semantic design**.
 
+## 🎭 Screenshots  
+
+| Home | Colombia |
+|--------------|--------------|
+| ![Home](imgs/github/home.png) | ![Colombia](imgs/github/colombia.png) |
+
 ## 📜 License
 
 This project was developed for educational purposes as part of a **college assignment**.
