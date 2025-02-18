@@ -1,0 +1,26 @@
+/*
+Assignment 2
+Name: Juan Jacobo Florez Monroy
+Student Number: 8857381
+*/
+main {
+	padding: 0px 190px;
+	/*Reviewed the style of how to justify the text on https://www.w3schools.com/cssref/css3_pr_text-justify.php*/
+	text-align: justify;
+	display: flex;
+	flex-direction: column;
+}
+h1 {
+	text-align: center;
+	margin-top: 80px;
+	margin-bottom: 90px;
+	font-size: 270%;
+	letter-spacing: 2px;
+}
+h2 {
+	font-size: 185%;
+	letter-spacing: 1px;
+}
+div {
+	margin-bottom: 50px;
+}

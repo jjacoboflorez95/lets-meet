@@ -1,0 +1,149 @@
+/*
+Assignment 2
+Name: Juan Jacobo Florez Monroy
+Student Number: 8857381
+*/
+
+/* Your layout should work in the latest version of Chrome OR Firefox for Mac OR PC.
+I used the website https://caniuse.com/ to test two properties of flex.
+1. First test: 
+Property: flex-wrap
+URL: https://caniuse.com/?search=flex-wrap
+Comment: The website shows that for Chrome 115 and Firefox 16.5 the property is marked as "Supported".
+
+2. Second test:
+Property: flex-direction
+URL: https://caniuse.com/?search=flex-direction
+Comment: The website shows that for Chrome 115 and Firefox 16.5 the property is marked as "Supported".
+*/
+main {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: start;
+}
+#div_video {
+	width: 100%;
+}
+video {
+	width: 100%;
+	margin-bottom: 150px;
+}
+#div_cities {
+	/*Reviewed the style of how to create a grid with template areas on https://www.w3schools.com/css/css_grid.asp*/
+	display: flex;
+	flex-wrap: wrap;
+	width: 72%;
+}
+.flex_container {
+	/*Reviewed the style of how to create a grid with template areas on https://www.w3schools.com/css/css_grid.asp*/
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+}
+#flex_item1,
+#flex_item2 {
+	width: 50%;
+}
+#flex_item3 {
+	width: 100%;
+	padding: 0px 150px;
+	margin-bottom: 150px;
+}
+img {
+	width: 85%;
+}
+aside {
+	border-left: 1px solid rgb(211, 211, 211);
+	padding: 5px 15px;
+	height: 650px;
+	width: 25%;
+	font-size: 95%;
+}
+aside p {
+	font-weight: bold;
+	margin-left: 23px;
+	letter-spacing: 1.8px;
+	font-style: italic;
+}
+aside li {
+	text-align: justify;
+	line-height: 25px;
+	margin-bottom: 15px;
+}
+
+/* Tablet layout */
+@media screen and (max-width: 1050px) {
+	#flex_item3 {
+		padding: 0px 70px;
+		font-size: 95%;
+		margin-bottom: 100px;
+	}
+	#flex_item3 p {
+		line-height: 25px;
+	}
+	aside {
+		height: 900px;
+		width: 23%;
+	}
+	aside li {
+		text-align: left;
+	}
+	img {
+		height: 300px;
+		width: 90%;
+	}
+}
+
+/* Mobile layout */
+@media screen and (max-width: 840px) {
+	main,
+	.flex_container {
+		flex-wrap: nowrap;
+		flex-direction: column;
+		align-items: center;
+	}
+	main {
+		gap: 80px;
+	}
+	.flex_container {
+		gap: 10px;
+	}
+	aside,
+	#div_cities {
+		width: 75%;
+	}
+	#flex_item1,
+	#flex_item2 {
+		width: 100%;
+	}
+	img {
+		height: 380px;
+		width: 100%;
+	}
+	#div_video video {
+		margin-bottom: 0px;
+	}
+	#div_cities {
+		/*
+		Here I'm using flex box reordering with media queries.
+		On mobile layout, div_video will be displayed first, then the "aside" and lastly div_cities.
+		The default value for order is 0, that's why I only use the order property in div_cities to make if go to the end.
+		*/
+		order: 1;
+	}
+	aside {
+		border: none;
+		height: auto;
+	}
+	aside p,
+	aside li {
+		text-align: center;
+	}
+	aside p {
+		font-size: 120%;
+		margin-bottom: 30px;
+	}
+	aside li {
+		list-style-type: none;
+	}
+}

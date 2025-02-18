@@ -1,0 +1,90 @@
+/*
+Assignment 2
+Name: Juan Jacobo Florez Monroy
+Student Number: 8857381
+*/
+body {
+	margin: 0;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
+	background-color: #f9fce6a0;
+	background-color: #f9fbeca0;
+	background-size: cover;
+}
+
+#divContainer {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+/*Header*/
+header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: #88a1b6dc;
+	background-color: #1f405bcd;
+	/*Box-shadow style that I applied on the header and learnt on https://www.w3schools.com/css/css3_shadows_box.asp*/
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	/*Sticky header that I reviewed on https://www.w3schools.com/howto/howto_js_sticky_header.asp*/
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+#logoheader {
+	font-size: 175%;
+	margin-left: 30px;
+	letter-spacing: 1px;
+	font-style: italic;
+	flex-grow: 1;
+}
+header a {
+	color: white;
+	text-decoration: none;
+}
+nav ul {
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	gap: 50px;
+	margin-right: 55px;
+	font-size: 120%;
+	letter-spacing: 1px;
+}
+main {
+	margin: 0px;
+	margin-top: 60.38px;
+	flex-grow: 1;
+}
+footer {
+	text-align: center;
+	padding: 33px;
+	background-color: #7c8992;
+	color: whitesmoke;
+}
+
+/**/
+p,
+main li {
+	font-size: 105%;
+	letter-spacing: 1.5px;
+	line-height: 30px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width: 840px) {
+	#logoheader {
+		font-size: 165%;
+		margin-left: 25px;
+	}
+	nav ul {
+		gap: 30px;
+		margin-right: 25px;
+		font-size: 110%;
+	}
+	main {
+		margin-top: 56.19px;
+	}
+}

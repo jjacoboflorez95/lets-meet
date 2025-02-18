@@ -1,0 +1,32 @@
+/*
+Assignment 2
+Name: Juan Jacobo Florez Monroy
+Student Number: 8857381
+*/
+main {
+	height: 700px;
+	background-image: url("../imgs/backgrounds/background_colombia1.webp");
+	/*Reviewed the style of how to make the background take the whole space on https://stackoverflow.com/questions/42181661/how-to-show-full-images-in-a-div*/
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	position: relative;
+}
+
+/*Reviewed the style of how to position a text over an element, in this case, an image on https://www.w3schools.com/howto/howto_css_image_text.asp*/
+.text_over_image {
+	position: absolute;
+	left: 67%;
+	font-weight: bold;
+	transform: translate(-50%, -50%);
+	font-size: 250%;
+	width: 65%;
+	color: #0b2132;
+}
+#text_over_image1 {
+	top: 20%;
+}
+
+#text_over_image2 {
+	top: 34%;
+}
